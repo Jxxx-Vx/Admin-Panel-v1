@@ -1,6 +1,7 @@
 # Haha
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
+The project will implement the NG-Zorro UI library to create a basic administration panel.
 
 ## Development server
 In addition, make sure to run the command after cloning: npm install --save-dev @angular-devkit/build-angular
