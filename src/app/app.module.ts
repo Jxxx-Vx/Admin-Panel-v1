@@ -83,6 +83,10 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzResizableModule } from 'ng-zorro-antd/resizable';
 import { NzPipesModule } from 'ng-zorro-antd/pipes';
+import { NotificationComponent } from './notification/notification.component';
+import { ContactComponent } from './contact/contact.component';
+import { ArchiveAccountComponent } from './archive-account/archive-account.component';
+import { ArchiveComponent } from './archive-account/archive/archive.component';
 
 registerLocaleData(en);
 
@@ -90,7 +94,11 @@ registerLocaleData(en);
   declarations: [
     AppComponent, 
     LoginComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    NotificationComponent,
+    ContactComponent,
+    ArchiveAccountComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,
