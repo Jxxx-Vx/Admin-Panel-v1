@@ -1,1 +1,50 @@
-<p>notification works!</p>
+<div class = "header">Send Preset Notifications</div>
+<br><br>
+
+<div class = "notif">
+    <nz-steps nzType="navigation" nzSize="small" [nzCurrent]=0>
+        <nz-step
+          nzTitle="Pick a Notification"
+          nzStatus="finish"
+         
+        ></nz-step>
+        <nz-step
+          nzTitle="Select who to notify"
+          nzStatus="process"
+
+        ></nz-step>
+        <nz-step
+          nzTitle="Confirm"
+          nzStatus="wait"
+        ></nz-step>
+      </nz-steps>
+</div>
+<br><br>
+
+<nz-row [nzGutter]="16">
+    <nz-col [nzSpan]="7">
+      <nz-card>
+        
+        <br><br><br>
+        <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+      </nz-card>
+    </nz-col>
+    <nz-col [nzSpan]="7">
+        <nz-card>
+            <label nz-checkbox>Checkbox</label>
+            <br><br><br>
+            <ng-template #prefixTplTwo><i nz-icon nzType="arrow-down"></i></ng-template>
+        </nz-card>
+    </nz-col>
+    <nz-col [nzSpan]="7">
+        <nz-card>
+          <br><br><br>
+          <ng-template #prefixTplTwo><i nz-icon nzType="arrow-down"></i></ng-template>
+        </nz-card>
+    </nz-col>
+</nz-row> 
+
+
+
+
+
