@@ -26,14 +26,6 @@
             <li nz-menu-item nzMatchRouter>
               <a routerLink="archive">Archive Account</a>
             </li>
-            li nz-menu-item nzMatchRouter>
-              <a>Notification</a>
-            <!-- </li> -->
-            li nz-menu-item nzMatchRouter>
-              <a>Archived Accounts</a>
-            <!-- </li> -->
-          </ul>
-        </li>
         <!-- <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
           <ul>
             <li nz-menu-item nzMatchRouter>
@@ -43,25 +35,29 @@
         </li> -->
       <!-- </ul> -->
     <!-- </nz-sider> -->
+
     <nz-layout>
-      <nz-header>
-        <div class="app-header">
+      <!-- <nz-header> -->
+        <!-- <div class="app-header">
           <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
               <i class="trigger"
                  nz-icon
                  [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
               ></i>
           </span>
-        </div>
-      </nz-header>
+        </div> -->
+      <!-- </nz-header> -->
+
       <nz-content>
         <div class="inner-content">
+          <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+        </span>
           <router-outlet></router-outlet>
-        </div>
-
-
-
-        
+        </div>        
       </nz-content>
 
     </nz-layout>
