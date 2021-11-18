@@ -1,8 +1,9 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class = "header">Send Preset Notifications</div>
 <br><br>
 
 <div class = "notif">
-    <nz-steps nzType="navigation" nzSize="small" [nzCurrent]=0>
+    <nz-steps nzType="navigation" nzSize="small" [nzCurrent]=1>
         <nz-step
           nzTitle="Pick a Notification"
           nzStatus="finish"
@@ -22,24 +23,57 @@
 <br><br>
 
 <nz-row [nzGutter]="16">
-    <nz-col [nzSpan]="7">
+    <nz-col [nzSpan]="7" class = "wide">
       <nz-card>
         
         <br><br><br>
-        <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+       
+      </nz-card>
+      <br>
+      <nz-card>
+        
+        <br><br><br>
+       
+      </nz-card>
+      <br>
+      <nz-card>
+        
+        <br><br><br>
+       
+      </nz-card>
+      <br>
+      <nz-card>
+        
+        <br><br><br>
+       
       </nz-card>
     </nz-col>
-    <nz-col [nzSpan]="7">
+    <nz-col [nzSpan]="7" class = "wide">
         <nz-card>
-            <label nz-checkbox>Checkbox</label>
-            <br><br><br>
-            <ng-template #prefixTplTwo><i nz-icon nzType="arrow-down"></i></ng-template>
+            <label nz-checkbox style = "font-size:20px;" >  Everyone</label><br><br>
+            <label nz-checkbox style = "font-size:20px;">  All the managers</label><br><br>
+            <label nz-checkbox style = "font-size:20px;">  All the coaches</label><br><br>
+            <label nz-checkbox style = "font-size:20px;">  All the advisors</label><br><br>
+            <label nz-checkbox style = "font-size:20px;">  All the specialists</label><br><br>
+            <label nz-checkbox style = "font-size:20px;">  All the clients</label><br><br>
+            <label nz-checkbox style = "font-size:20px;">  By names</label><br><br>
+            
+            <form class = "search">
+              <input type="text" placeholder="Search for names.." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            
         </nz-card>
     </nz-col>
-    <nz-col [nzSpan]="7">
+    <nz-col [nzSpan]="7" class = "wide">
         <nz-card>
-          <br><br><br>
-          <ng-template #prefixTplTwo><i nz-icon nzType="arrow-down"></i></ng-template>
+          <div class = "confirm">
+            Confirm to send the selected <br>notification to the chosen people.
+            <br><br
+            ><button type="submit">Send</button>
+          </div>
+            <br><br><br><br><br>
+          
         </nz-card>
     </nz-col>
 </nz-row> 

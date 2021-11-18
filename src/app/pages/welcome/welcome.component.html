@@ -2,81 +2,68 @@
 <br>
 
 
-<div style="background: #ECECEC; padding: 30px;">
+<div style="border-radius: 25px;  border: 2px solid #ceca00; background: #ECECEC; padding: 30px; ">
     <nz-row [nzGutter]="16">
       <nz-col [nzSpan]="8">
         <nz-card>
-          <nz-statistic
-            [nzValue]="(11.28 | number: '1.0-2')!"
-            [nzTitle]="'Active'"
-            [nzPrefix]="prefixTplOne"
-            [nzSuffix]="'%'"
-            [nzValueStyle]="{ color: '#3F8600' }"
-          ></nz-statistic>
+          <div class = "dashboard">
+            <img src="/assets/images/admin.PNG"><br>
+            Total Number of Admins
+          </div>
           <br><br><br>
-          <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+          
         </nz-card>
         <br><br>
         <nz-card>
-            <nz-statistic
-              [nzValue]="(11.28 | number: '1.0-2')!"
-              [nzTitle]="'Active'"
-              [nzPrefix]="prefixTplOne"
-              [nzSuffix]="'%'"
-              [nzValueStyle]="{ color: '#3F8600' }"
-            ></nz-statistic>
+          <div class = "dashboard">
+            <img src="/assets/images/advisors.PNG"><br>
+            Total Number of Advisors
+          </div>
+            
             <br><br><br>
-            <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+           
           </nz-card>
       </nz-col>
       <nz-col [nzSpan]="8">
         <nz-card>
-          <nz-statistic
-            [nzValue]="(11.28 | number: '1.0-2')!"
-            [nzTitle]="'Active'"
-            [nzPrefix]="prefixTplOne"
-            [nzSuffix]="'%'"
-            [nzValueStyle]="{ color: '#3F8600' }"
-          ></nz-statistic>
+          <div class = "dashboard">
+            <img src="/assets/images/managers.PNG"><br>
+            Total Number of Managers
+          </div>
+         
           <br><br><br>
-          <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+          
         </nz-card>
         <br><br>
         <nz-card>
-            <nz-statistic
-              [nzValue]="(11.28 | number: '1.0-2')!"
-              [nzTitle]="'Active'"
-              [nzPrefix]="prefixTplOne"
-              [nzSuffix]="'%'"
-              [nzValueStyle]="{ color: '#3F8600' }"
-            ></nz-statistic>
+          
+          <div class = "dashboard">
+            <img src="/assets/images/coaches.PNG"><br>
+            Total Number of Coaches
+          </div>
+           
             <br><br><br>
-            <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+            
           </nz-card>
       </nz-col>
       <nz-col [nzSpan]="8">
         <nz-card>
-          <nz-statistic
-            [nzValue]="(9.3 | number: '1.0-2')!"
-            [nzTitle]="'Idle'"
-            [nzPrefix]="prefixTplTwo"
-            [nzSuffix]="'%'"
-            [nzValueStyle]="{ color: '#CF1322' }"
-          ></nz-statistic>
+          <div class = "dashboard">
+            <img src="/assets/images/specialists.PNG"><br>
+            Total Number of Specialists
+          </div>
           <br><br><br>
-          <ng-template #prefixTplTwo><i nz-icon nzType="arrow-down"></i></ng-template>
+       
         </nz-card>
         <br><br>
         <nz-card>
-            <nz-statistic
-              [nzValue]="(9.3 | number: '1.0-2')!"
-              [nzTitle]="'Idle'"
-              [nzPrefix]="prefixTplTwo"
-              [nzSuffix]="'%'"
-              [nzValueStyle]="{ color: '#CF1322' }"
-            ></nz-statistic>
+          <div class = "dashboard">
+            <img src="/assets/images/clients.PNG"><br>
+            Total Number of Clients
+          </div>
+           
             <br><br><br>
-            <ng-template #prefixTplTwo><i nz-icon nzType="arrow-down"></i></ng-template>
+          
           </nz-card>
       </nz-col>
     </nz-row>
