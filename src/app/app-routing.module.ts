@@ -13,10 +13,6 @@ const routes: Routes = [
   {path: 'notification',component:NotificationComponent},
   {path: 'contact',component:ContactComponent},
   {path: 'archive',component:ArchiveComponent},
-
-
-  // { path: '', pathMatch: 'full', redirectTo: '/welcome' },
-  //{ path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
 ];
 
 @NgModule({
