@@ -34,14 +34,14 @@
     padding-left: 24px;
     overflow: hidden;
     line-height: 64px;
-    background: #001529;
+    background: #471da8;
     transition: all .3s;
   }
   
   .sidebar-logo img {
     display: inline-block;
-    height: 32px;
-    width: 32px;
+    height: 40px;
+    width: 40px;
     vertical-align: middle;
   }
   
@@ -78,5 +78,4 @@
     background: #fff;
     height: 100%;
   }
-  
-  
+
