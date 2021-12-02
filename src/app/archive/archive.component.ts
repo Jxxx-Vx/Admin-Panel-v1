@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+// import { url } from 'inspector';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
@@ -14,15 +16,15 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 
     </nz-tabset>
   <div class = "scroll">
-    <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
+    <ul nz-list [nzDataSource]="users" nzBordered nzSize="large">
       <nz-list-header>Header</nz-list-header>
-      <li nz-list-item *ngFor="let item of data" nzNoFlex>
+      <li nz-list-item *ngFor="let item of users" nzNoFlex>
         <ul nz-list-item-actions>
           <nz-list-item-action>
             <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
-        {{ item }}
+        {{ item.spreadsheet }}
       </li>
       <nz-list-footer>Footer</nz-list-footer>
     </ul>
@@ -31,7 +33,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   styleUrls: ['./archive.component.css']
 })
 export class ArchiveComponent implements OnInit {
-
+  users: any[] = [];
   data = [
     'Ryan',
     'Dave Marshall',
@@ -74,7 +76,12 @@ export class ArchiveComponent implements OnInit {
     'Eric',
     'Stupid'
   ];
-  constructor(public msg: NzMessageService) { }
+  constructor(public msg: NzMessageService, private http: HttpClient) { 
+    let url = `http://test.helloiris.ai/api/clients`;
+    this.http.get<any[]>(url).toPromise().then(data => {
+      this.users = data;
+    });
+  }
 
   ngOnInit(): void {
   }
