@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 
+
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
@@ -173,7 +174,11 @@ registerLocaleData(en);
     NzUploadModule,
     NzWaveModule,
     NzResizableModule,
-    NzPipesModule
+    NzPipesModule,
+
+
+
+
     
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

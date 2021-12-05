@@ -24,7 +24,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
             <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
-        {{ item.spreadsheet }}
+        {{ item.name }}
       </li>
       <nz-list-footer>Footer</nz-list-footer>
     </ul>
@@ -34,50 +34,9 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 })
 export class ArchiveComponent implements OnInit {
   users: any[] = [];
-  data = [
-    'Ryan',
-    'Dave Marshall',
-    'John Smith',
-    'Michael Rodriguez',
-    'Kevin Nguyen',
-    'Brian',
-    'Eric',
-    'Stupid',
-    'Ryan',
-    'Dave Marshall',
-    'John Smith',
-    'Michael Rodriguez',
-    'Kevin Nguyen',
-    'Brian',
-    'Eric',
-    'Stupid',
-    'Ryan',
-    'Dave Marshall',
-    'John Smith',
-    'Michael Rodriguez',
-    'Kevin Nguyen',
-    'Brian',
-    'Eric',
-    'Stupid',
-    'Ryan',
-    'Dave Marshall',
-    'John Smith',
-    'Michael Rodriguez',
-    'Kevin Nguyen',
-    'Brian',
-    'Eric',
-    'Stupid',
-    'Ryan',
-    'Dave Marshall',
-    'John Smith',
-    'Michael Rodriguez',
-    'Kevin Nguyen',
-    'Brian',
-    'Eric',
-    'Stupid'
-  ];
+  
   constructor(public msg: NzMessageService, private http: HttpClient) { 
-    let url = `http://test.helloiris.ai/api/clients`;
+    let url = `http://localhost:3012/see-user/archive`;
     this.http.get<any[]>(url).toPromise().then(data => {
       this.users = data;
     });

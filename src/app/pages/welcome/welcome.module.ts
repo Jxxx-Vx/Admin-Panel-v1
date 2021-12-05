@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { WelcomeRoutingModule } from './welcome-routing.module';
-
+import { HttpClient } from '@angular/common/http';
 import { WelcomeComponent } from './welcome.component';
 
 
