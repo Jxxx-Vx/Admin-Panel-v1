@@ -21,8 +21,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
     </ul>
   </nz-tab>
 
-      <nz-tab nzTitle="Manager"><ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
-      <li nz-list-item *ngFor="let item of data" nzNoFlex>
+      <nz-tab nzTitle="Manager"><ul nz-list [nzDataSource]="managers" nzBordered nzSize="large">
+      <li nz-list-item *ngFor="let item of managers" nzNoFlex>
         <ul nz-list-item-actions>
           <nz-list-item-action>
             <a (click)="msg.info('edit')">edit</a>
@@ -35,8 +35,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 
 
 
-      <nz-tab nzTitle="Coaches"><ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
-    <li nz-list-item *ngFor="let item of data" nzNoFlex>
+      <nz-tab nzTitle="Coaches"><ul nz-list [nzDataSource]="coaches" nzBordered nzSize="large">
+    <li nz-list-item *ngFor="let item of coaches" nzNoFlex>
       <ul nz-list-item-actions>
         <nz-list-item-action>
           <a (click)="msg.info('edit')">edit</a>
@@ -46,8 +46,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
     </li>
   </ul></nz-tab>
 
-      <nz-tab nzTitle="Advisors"><ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
-      <li nz-list-item *ngFor="let item of data" nzNoFlex>
+      <nz-tab nzTitle="Advisors"><ul nz-list [nzDataSource]="advisors" nzBordered nzSize="large">
+      <li nz-list-item *ngFor="let item of advisors" nzNoFlex>
         <ul nz-list-item-actions>
           <nz-list-item-action>
             <a (click)="msg.info('edit')">edit</a>
@@ -57,8 +57,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
       </li>
     </ul></nz-tab>
 
-      <nz-tab nzTitle="Specialist"><ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
-    <li nz-list-item *ngFor="let item of data" nzNoFlex>
+      <nz-tab nzTitle="Specialist"><ul nz-list [nzDataSource]="specialists" nzBordered nzSize="large">
+    <li nz-list-item *ngFor="let item of specialists" nzNoFlex>
       <ul nz-list-item-actions>
         <nz-list-item-action>
           <a (click)="msg.info('edit')">edit</a>
@@ -95,6 +95,22 @@ export class ContactComponent implements OnInit {
     'John Smith',
     'Michael Rodriguez',
     'Kevin Nguyen '
+  ];
+  managers = [
+    'Ryan'
+   
+  ];
+  coaches = [
+    'Dave Marshall'
+   
+  ];
+  advisors  = [
+    'John Smith'
+   
+  ];
+  specialists = [
+    'Michael Rodriguez'
+   
   ];
   constructor(public msg: NzMessageService) { }
 
