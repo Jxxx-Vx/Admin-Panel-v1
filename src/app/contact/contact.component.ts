@@ -8,17 +8,34 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   
   <h3 [ngStyle]="{ margin: '16px 0' }">Large Size</h3>
   <nz-tabset>
-      <nz-tab nzTitle="All ">Content of Tab Pane 1</nz-tab>
-      <nz-tab nzTitle="Manager">Content of Tab Pane 2</nz-tab>
-      <nz-tab nzTitle="Coaches">Content of Tab Pane 3</nz-tab>
-      <nz-tab nzTitle="Advisors">Content of Tab Pane 4</nz-tab>
-      <nz-tab nzTitle="Specialist">Content of Tab Pane 5</nz-tab>
-      <nz-tab nzTitle="User">Content of Tab Pane 6</nz-tab>
+        <nz-tab nzTitle="All ">
+        <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
+      <li nz-list-item *ngFor="let item of data" nzNoFlex>
+        <ul nz-list-item-actions>
+          <nz-list-item-action>
+            <a (click)="msg.info('edit')">edit</a>
+          </nz-list-item-action>
+        </ul>
+        {{ item }}
+      </li>
+    </ul>
+  </nz-tab>
 
-    </nz-tabset>
+      <nz-tab nzTitle="Manager"><ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
+      <li nz-list-item *ngFor="let item of data" nzNoFlex>
+        <ul nz-list-item-actions>
+          <nz-list-item-action>
+            <a (click)="msg.info('edit')">edit</a>
+          </nz-list-item-action>
+        </ul>
+        {{ item }}
+      </li>
+    </ul></nz-tab>
 
-  <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
-    <nz-list-header>Header</nz-list-header>
+
+
+
+      <nz-tab nzTitle="Coaches"><ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
     <li nz-list-item *ngFor="let item of data" nzNoFlex>
       <ul nz-list-item-actions>
         <nz-list-item-action>
@@ -27,8 +44,46 @@ import { NzMessageService } from 'ng-zorro-antd/message';
       </ul>
       {{ item }}
     </li>
-    <nz-list-footer>Footer</nz-list-footer>
+  </ul></nz-tab>
+
+      <nz-tab nzTitle="Advisors"><ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
+      <li nz-list-item *ngFor="let item of data" nzNoFlex>
+        <ul nz-list-item-actions>
+          <nz-list-item-action>
+            <a (click)="msg.info('edit')">edit</a>
+          </nz-list-item-action>
+        </ul>
+        {{ item }}
+      </li>
+    </ul></nz-tab>
+
+      <nz-tab nzTitle="Specialist"><ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
+    <li nz-list-item *ngFor="let item of data" nzNoFlex>
+      <ul nz-list-item-actions>
+        <nz-list-item-action>
+          <a (click)="msg.info('edit')">edit</a>
+        </nz-list-item-action>
+      </ul>
+      {{ item }}
+    </li>
+  </ul></nz-tab>
+
+      <nz-tab nzTitle="User">
+      <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
+    <li nz-list-item *ngFor="let item of data" nzNoFlex>
+      <ul nz-list-item-actions>
+        <nz-list-item-action>
+          <a (click)="msg.info('edit')">edit</a>
+        </nz-list-item-action>
+      </ul>
+      {{ item }}
+    </li>
   </ul>
+  </nz-tab>
+
+    </nz-tabset>
+
+  
   `,
   styleUrls: ['./contact.component.css']
 })
