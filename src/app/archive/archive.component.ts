@@ -1,4 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { query } from '@angular/animations';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 // import { url } from 'inspector';
 import { NzListModule } from 'ng-zorro-antd/list';
@@ -12,21 +13,21 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   
   <h3 [ngStyle]="{ margin: '16px 0' }">Archived Accounts</h3>
   <nz-tabset>
-      <nz-tab nzTitle="Archived "></nz-tab>
+      <nz-tab nzTitle="Archived"></nz-tab>
 
     </nz-tabset>
   <div class = "scroll">
     <ul nz-list [nzDataSource]="users" nzBordered nzSize="large">
-      <nz-list-header>Header</nz-list-header>
+    
+      <nz-list-header>Archived</nz-list-header>
       <li nz-list-item *ngFor="let item of users" nzNoFlex>
         <ul nz-list-item-actions>
           <nz-list-item-action>
-            <a (click)="msg.info('edit')">edit</a>
+            <button class = "unarchive" (click)="unArchive(item.ID)">Unarchive</button>
           </nz-list-item-action>
         </ul>
-        {{ item.name }}
+         {{ item.email }}
       </li>
-      <nz-list-footer>Footer</nz-list-footer>
     </ul>
   </div>
   `,
@@ -34,6 +35,13 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 })
 export class ArchiveComponent implements OnInit {
   users: any[] = [];
+  url = `http://localhost:3012/unarchive`;
+
+  unArchive(ID: any){
+    const httpHeaders = new HttpHeaders();
+    httpHeaders.append('content-type', 'application/json');
+    this.http.post(this.url, {"_id": ID, "archive": "true"}, {headers:httpHeaders});
+  }
   
   constructor(public msg: NzMessageService, private http: HttpClient) { 
     let url = `http://localhost:3012/see-user/archive`;
@@ -41,6 +49,7 @@ export class ArchiveComponent implements OnInit {
       this.users = data;
     });
   }
+
 
   ngOnInit(): void {
   }

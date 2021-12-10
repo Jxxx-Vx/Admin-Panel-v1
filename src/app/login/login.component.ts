@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd/message';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,15 +9,19 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  
   validateForm!: FormGroup;
 
   submitForm(): void {
     if (this.validateForm.valid) {
       let { username, password } = this.validateForm.value;
-      if( username == 'admin' && password == '12345' ){
+      if(password == '12345' ){
+        this.message.info('Login successful!');
         this.router.navigate(['/welcome']);
       }
+      else{this.message.info('Login unsuccessful!');}
     } else {
+      this.message.info('Login unsuccessful!');
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {
           control.markAsDirty();
@@ -26,7 +31,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder, private router:Router) {}
+  createBasicMessage(): void {
+  }
+
+  constructor(private fb: FormBuilder, private router:Router,private message: NzMessageService) {}
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({

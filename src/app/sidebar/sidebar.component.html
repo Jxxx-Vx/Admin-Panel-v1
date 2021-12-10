@@ -1,0 +1,30 @@
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+           
+            [nzTrigger]="null"
+            >
+    <div class="sidebar-logo">
+      <img src="/assets/images/logo.png" alt="logo">
+      <h1>Fynanc Admin Panel</h1>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" >
+      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome">Welcome</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink = "/notification">Notification</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink = "/contact">Contact</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink = "/archive">Archived Accounts</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>

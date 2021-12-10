@@ -87,6 +87,7 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
 import { NotificationComponent } from './notification/notification.component';
 import { ContactComponent } from './contact/contact.component';
 import { ArchiveComponent } from './archive/archive.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 registerLocaleData(en);
 
@@ -98,6 +99,7 @@ registerLocaleData(en);
     NotificationComponent,
     ContactComponent,
     ArchiveComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -175,7 +177,7 @@ registerLocaleData(en);
     NzWaveModule,
     NzResizableModule,
     NzPipesModule,
-
+    
 
 
 
