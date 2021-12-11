@@ -14,7 +14,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
             <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
-        {{ item }}
+        <a>{{ item }}</a>
       </li>
     </ul>
   </nz-tab> 
@@ -28,7 +28,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
             <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
-        {{ item }} 
+        <a ng-href = "">{{ item }}</a> 
       </li>
     </ul></nz-tab>
     /** comments for code block  24 - 33. The code is for the managers tab for the contacts page. line 31 creates a loop that will render all the data from the data array*/
@@ -45,7 +45,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
           <a (click)="msg.info('edit')">edit</a>
         </nz-list-item-action>
       </ul>
-      {{ item }}
+      <a>{{ item }}</a>
     </li>
   </ul></nz-tab>
 
@@ -67,7 +67,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
           <a (click)="msg.info('edit')">edit</a>
         </nz-list-item-action>
       </ul>
-      {{ item }}
+      <a>{{ item }}</a>
     </li>
   </ul></nz-tab>
 
@@ -79,7 +79,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
           <a (click)="msg.info('edit')">edit</a>
         </nz-list-item-action>
       </ul>
-      {{ item }}
+      <a>{{ item }}</a>
     </li>
   </ul>
   </nz-tab>
@@ -92,7 +92,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
           <a (click)="msg.info('edit')">edit</a>
         </nz-list-item-action>
       </ul>
-      {{ item }}
+      <a>{{ item }}</a>
     </li>
   </ul>
   </nz-tab>
