@@ -5,6 +5,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { NotificationComponent } from './notification/notification.component';
 import { ContactComponent } from './contact/contact.component';
 import { ArchiveComponent } from './archive/archive.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path: '', pathMatch:'full', redirectTo: '/login'},
@@ -13,6 +14,8 @@ const routes: Routes = [
   {path: 'notification',component:NotificationComponent},
   {path: 'contact',component:ContactComponent},
   {path: 'archive',component:ArchiveComponent},
+  {path: 'contact/:contactProfile',component:ProfileComponent},
+
 ];
 
 @NgModule({

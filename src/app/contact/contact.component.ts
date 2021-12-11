@@ -14,7 +14,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
             <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
-        <a>{{ item }}</a>
+        <a routerLink = "/contact/hello">{{ item }}</a>
       </li>
     </ul>
   </nz-tab> 
@@ -23,12 +23,12 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 
       <nz-tab nzTitle="Manager"><ul nz-list [nzDataSource]="managers" nzBordered nzSize="large">
       <li nz-list-item *ngFor="let item of managers" nzNoFlex> 
-        <ul nz-list-item-actions>
+        <ul nz-list-item-actions ng-init = "itemArg = {item}">
           <nz-list-item-action>
             <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
-        <a ng-href = "">{{ item }}</a> 
+        <a ng-href = "https://www.google.com/"> {{ item }}</a> 
       </li>
     </ul></nz-tab>
     /** comments for code block  24 - 33. The code is for the managers tab for the contacts page. line 31 creates a loop that will render all the data from the data array*/

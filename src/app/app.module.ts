@@ -88,6 +88,9 @@ import { NotificationComponent } from './notification/notification.component';
 import { ContactComponent } from './contact/contact.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ContactsUsersComponent } from './contact/contacts-users/contacts-users.component';
+import { ContactProfileComponent } from './contact-profile/contact-profile.component';
+import { ProfileComponent } from './profile/profile.component';
 
 registerLocaleData(en);
 
@@ -99,7 +102,10 @@ registerLocaleData(en);
     NotificationComponent,
     ContactComponent,
     ArchiveComponent,
-    SidebarComponent
+    SidebarComponent,
+    ContactsUsersComponent,
+    ContactProfileComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
