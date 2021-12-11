@@ -14,7 +14,7 @@ Go to the package.json to find all the dependacies
 
 #download angular
 type this in the terminal npm install -g @angular/cli
-https://angular.io/guide/setup-local this page also goes more in depth to how download it. 
+
 On windows remember to add to path
 Without downloading angular into your computer, the project will not run
 
