@@ -19,13 +19,14 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   <div class = "scroll">
     <ul nz-list [nzDataSource]="users" nzBordered nzSize="large">
     
-      <nz-list-header>Archived</nz-list-header>
+      <nz-list-header class = "spacing">Archived</nz-list-header>
       <li nz-list-item *ngFor="let item of users" nzNoFlex>
         <ul nz-list-item-actions>
           <nz-list-item-action>
-            <button class = "unarchive" (click)="unArchive(item.ID)">Unarchive</button>
+            <button class = "unarchive" (click)="unArchive(item._id)">Unarchive</button>
           </nz-list-item-action>
         </ul>
+        <nz-avatar nzSize="small" nzIcon="user" class = "avatar" type></nz-avatar>
          {{ item.email }}
       </li>
     </ul>
@@ -36,11 +37,15 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 export class ArchiveComponent implements OnInit {
   users: any[] = [];
   url = `http://localhost:3012/unarchive`;
+  
 
   unArchive(ID: any){
-    const httpHeaders = new HttpHeaders();
-    httpHeaders.append('content-type', 'application/json');
-    this.http.post(this.url, {"_id": ID, "archive": "true"}, {headers:httpHeaders});
+
+    this.http.post(`http://localhost:3012/unarchive`, {"_id": ID}).toPromise().then(data =>{
+      console.log('Testing http post request');
+    });
+    console.log('Testing unarchive function, id = ', ID);
+    window.location.reload();
   }
   
   constructor(public msg: NzMessageService, private http: HttpClient) { 

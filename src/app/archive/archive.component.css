@@ -4,3 +4,13 @@
     max-width:1200px;
     overflow:scroll;
 }
+
+.avatar{
+    margin-right:5px;
+}
+
+.spacing{
+    margin-left:32px;
+    font-size:18px;
+    font-weight: bold;
+}
