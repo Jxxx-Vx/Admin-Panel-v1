@@ -18,6 +18,8 @@ https://angular.io/guide/setup-local this page also goes more in depth to how do
 On windows remember to add to path
 Without downloading angular into your computer, the project will not run
 
+All the source code is in the src folder. All the other folders are dependencies that are necessary for the program to work
+
 #backend
 remember to also run the backend. Many features will not work if the backend is not running in the background. Also remember that the backend is running on localhost:3012 for it to work. Conversely, the back end will only work on port http://localhost:4200/
 
