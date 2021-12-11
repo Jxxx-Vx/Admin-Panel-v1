@@ -8,7 +8,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 
 
 @Component({
-  selector: 'nz-demo-list-simple',
+  selector: 'nz-demo-list-simple',// template is where all the html code is 
   template: `
   
   <h3 [ngStyle]="{ margin: '16px 0' }">Archived Accounts</h3>
@@ -49,9 +49,9 @@ export class ArchiveComponent implements OnInit {
   }
   
   constructor(public msg: NzMessageService, private http: HttpClient) { 
-    let url = `http://localhost:3012/see-user/archive`;
-    this.http.get<any[]>(url).toPromise().then(data => {
-      this.users = data;
+    let url = `http://localhost:3012/see-user/archive`; // this is the url that needs to be run for the code to work
+    this.http.get<any[]>(url).toPromise().then(data => {// make sure it is in the correct port 3012
+      this.users = data; // this code basically just takes the sets the data from the url and stores it into data. Then it sets data to the component instance variable this.users
     });
   }
 

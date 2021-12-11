@@ -4,9 +4,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'nz-demo-list-simple',
-  template: `
-  
-  <h3 [ngStyle]="{ margin: '16px 0' }">Large Size</h3>
+  template: ` <h3 [ngStyle]="{ margin: '16px 0' }">Large Size</h3>
   <nz-tabset>
         <nz-tab nzTitle="All">
         <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
@@ -19,18 +17,23 @@ import { NzMessageService } from 'ng-zorro-antd/message';
         {{ item }}
       </li>
     </ul>
-  </nz-tab>
+  </nz-tab> 
+  /** comments for code block  8 - 20. The code is for the all tab for the contacts page. line 11 creates a loop that will render all the data from the data array*/
+  /** comments for code block  8 - 20. line 17 will render the elements in item in a ul or unordered list */
 
       <nz-tab nzTitle="Manager"><ul nz-list [nzDataSource]="managers" nzBordered nzSize="large">
-      <li nz-list-item *ngFor="let item of managers" nzNoFlex>
+      <li nz-list-item *ngFor="let item of managers" nzNoFlex> 
         <ul nz-list-item-actions>
           <nz-list-item-action>
             <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
-        {{ item }}
+        {{ item }} 
       </li>
     </ul></nz-tab>
+    /** comments for code block  24 - 33. The code is for the managers tab for the contacts page. line 31 creates a loop that will render all the data from the data array*/
+  /** comments for code block  24 - 33. for examples on the ng zorro component that was used, check out their page  */
+   /** https://ng.ant.design/components/tabs/en */
 
 
 
