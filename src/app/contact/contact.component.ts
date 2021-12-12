@@ -86,7 +86,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
         <nz-list-item-action>
         </nz-list-item-action>
       </ul>
-      <a>{{ item }}</a>
+      <a routerLink = "/contact/{{item}}">{{ item }}</a>
     </li>
   </ul>
   </nz-tab>
