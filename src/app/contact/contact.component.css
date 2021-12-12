@@ -1,0 +1,7 @@
+
+
+.scroll{
+    max-height:1200px;
+    max-width:1200px;
+    overflow:scroll;
+}

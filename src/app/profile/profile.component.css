@@ -1,0 +1,22 @@
+.profile{
+    text-align: center;
+    font-size: 48px;
+    font-style:italic;
+    font-weight:bold;
+    text-shadow: 0 0 1px #2e0000;
+}
+
+.center{
+    text-align: center;
+    border-color:blue;
+    border-radius: 100px;
+    border: 5px solid #2d0370;
+    width: 700px;
+    background:rgb(215, 243, 252);
+    margin: auto;
+}
+
+
+.fonts {
+    font-size:18px;
+}

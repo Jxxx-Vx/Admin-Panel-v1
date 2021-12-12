@@ -39,15 +39,25 @@
     border-radius:10px;
 }
 
-.card button{
-    background-color: rgb(5, 168, 26);
-    max-height: 60px;
-    padding: 0px 30px;
-    float: right;
-    border-width: 2px;
-    border-radius:30px;
-    
+.edit{
+    margin-left:10px;
+    background-color:rgb(72, 255, 0);
+    background-position: top;
+
 }
 
+.delete{
+    margin-left:10px;
+    background-color:rgba(241, 111, 93, 0.979);
+    background-position: top;
+}
 
+.select{
+    background-color: rgb(13, 179, 230);
+    max-height: 60px;
+    padding: 0px 15px;
+    margin-left: 10px;
+    border-width: 1px;
+    border-radius: 30px;
+}
 
