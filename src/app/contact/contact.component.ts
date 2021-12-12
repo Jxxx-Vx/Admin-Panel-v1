@@ -14,7 +14,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
             <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
-        <a routerLink = "/contact/hello">{{ item }}</a>
+        <a routerLink = "/contact/{{item}}">{{ item }}</a>
       </li>
     </ul>
   </nz-tab> 

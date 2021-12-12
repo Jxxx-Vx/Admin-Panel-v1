@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'notification',component:NotificationComponent},
   {path: 'contact',component:ContactComponent},
   {path: 'archive',component:ArchiveComponent},
-  {path: 'contact/:contactProfile',component:ProfileComponent},
+  {path: 'contact/:userID',component:ProfileComponent},
 
 ];
 
