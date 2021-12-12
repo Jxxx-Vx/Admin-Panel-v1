@@ -11,7 +11,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
       <li nz-list-item *ngFor="let item of data" nzNoFlex>
         <ul nz-list-item-actions>
           <nz-list-item-action>
-            <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
         <a routerLink = "/contact/{{item}}">{{ item }}</a>
@@ -28,7 +27,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
             <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
-        <a ng-href = "https://www.google.com/"> {{ item }}</a> 
+        <a routerLink = "/contact/{{item}}"> {{ item }}</a> 
       </li>
     </ul></nz-tab>
     /** comments for code block  24 - 33. The code is for the managers tab for the contacts page. line 31 creates a loop that will render all the data from the data array*/
@@ -42,10 +41,9 @@ import { NzMessageService } from 'ng-zorro-antd/message';
     <li nz-list-item *ngFor="let item of coaches" nzNoFlex>
       <ul nz-list-item-actions>
         <nz-list-item-action>
-          <a (click)="msg.info('edit')">edit</a>
         </nz-list-item-action>
       </ul>
-      <a>{{ item }}</a>
+      <a routerLink = "/contact/{{item}}">{{ item }}</a>
     </li>
   </ul></nz-tab>
 
@@ -53,10 +51,9 @@ import { NzMessageService } from 'ng-zorro-antd/message';
       <li nz-list-item *ngFor="let item of advisors" nzNoFlex>
         <ul nz-list-item-actions>
           <nz-list-item-action>
-            <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
-        {{ item }}
+        <a routerLink = "/contact/{{item}}">{{ item }}</a>
       </li>
     </ul></nz-tab>
 
@@ -64,10 +61,9 @@ import { NzMessageService } from 'ng-zorro-antd/message';
     <li nz-list-item *ngFor="let item of specialists" nzNoFlex>
       <ul nz-list-item-actions>
         <nz-list-item-action>
-          <a (click)="msg.info('edit')">edit</a>
         </nz-list-item-action>
       </ul>
-      <a>{{ item }}</a>
+      <a routerLink = "/contact/{{item}}">{{ item }}</a>
     </li>
   </ul></nz-tab>
 
@@ -76,10 +72,9 @@ import { NzMessageService } from 'ng-zorro-antd/message';
     <li nz-list-item *ngFor="let item of data" nzNoFlex>
       <ul nz-list-item-actions>
         <nz-list-item-action>
-          <a (click)="msg.info('edit')">edit</a>
         </nz-list-item-action>
       </ul>
-      <a>{{ item }}</a>
+      <a routerLink = "/contact/{{item}}">{{ item }}</a>
     </li>
   </ul>
   </nz-tab>
@@ -89,7 +84,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
     <li nz-list-item *ngFor="let item of data" nzNoFlex>
       <ul nz-list-item-actions>
         <nz-list-item-action>
-          <a (click)="msg.info('edit')">edit</a>
         </nz-list-item-action>
       </ul>
       <a>{{ item }}</a>
