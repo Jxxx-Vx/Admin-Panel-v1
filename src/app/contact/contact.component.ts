@@ -4,7 +4,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'nz-demo-list-simple',
-  template: ` <h3 [ngStyle]="{ margin: '16px 0' }">Large Size</h3>
+  template: ` <h3 [ngStyle]="{ margin: '16px 0' }">Contacts</h3>
   <nz-tabset>
         <nz-tab nzTitle="All">
         <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
@@ -24,7 +24,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
       <li nz-list-item *ngFor="let item of managers" nzNoFlex> 
         <ul nz-list-item-actions ng-init = "itemArg = {item}">
           <nz-list-item-action>
-            <a (click)="msg.info('edit')">edit</a>
           </nz-list-item-action>
         </ul>
         <a routerLink = "/contact/{{item}}"> {{ item }}</a> 
@@ -46,6 +45,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
       <a routerLink = "/contact/{{item}}">{{ item }}</a>
     </li>
   </ul></nz-tab>
+  /** this is the coaches tab. The anchor tag is necessary for routing to the profiles page*/
+  /** when you click on it, it will send you to the */
 
       <nz-tab nzTitle="Advisors"><ul nz-list [nzDataSource]="advisors" nzBordered nzSize="large">
       <li nz-list-item *ngFor="let item of advisors" nzNoFlex>
@@ -56,6 +57,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
         <a routerLink = "/contact/{{item}}">{{ item }}</a>
       </li>
     </ul></nz-tab>
+    /** this is the advisors tab */
+
 
       <nz-tab nzTitle="Specialist"><ul nz-list [nzDataSource]="specialists" nzBordered nzSize="large">
     <li nz-list-item *ngFor="let item of specialists" nzNoFlex>
@@ -66,6 +69,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
       <a routerLink = "/contact/{{item}}">{{ item }}</a>
     </li>
   </ul></nz-tab>
+  /** this is the specialist tab */
+
 
       <nz-tab nzTitle="User">
       <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
@@ -78,6 +83,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
     </li>
   </ul>
   </nz-tab>
+  /** this is the User tab */
+
 
   <nz-tab nzTitle="Admin">
       <ul nz-list [nzDataSource]="data" nzBordered nzSize="large">
@@ -90,6 +97,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
     </li>
   </ul>
   </nz-tab>
+  /** this is the admin tab */
 
     </nz-tabset>
 
@@ -124,7 +132,9 @@ export class ContactComponent implements OnInit {
     'Michael Rodriguez'
    
   ];
-  constructor(public msg: NzMessageService) { }
+  constructor(public msg: NzMessageService) { }// the constructor is created when the component is created
+  //in this case it is a a component necessary for front end and back end connection
+
 
   ngOnInit(): void {
   }
