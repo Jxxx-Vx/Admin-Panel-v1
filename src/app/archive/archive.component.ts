@@ -39,16 +39,17 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 })
 export class ArchiveComponent implements OnInit {
   users: any[] = [];
-
+  httpHeaders = new HttpHeaders();
   
 
   unArchive(ID: any){
-
-    this.http.post(`http://localhost:3012/unarchive`,{_id: ID}).toPromise().then(data =>{
-      console.log('Testing http post request');
+    
+    this.http.post(`http://localhost:3012/unarchive`,{"_id": ID, "archive": "true"}).toPromise().then(data =>{
+      console.log('Testing http post request:', data);
     });
     console.log('Testing unarchive function, id = ', ID);
-    //window.location.reload();
+    window.location.reload();
+   
   }
   
   constructor(public msg: NzMessageService, private http: HttpClient) { 

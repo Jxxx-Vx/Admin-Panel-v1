@@ -12,6 +12,9 @@ export class NotificationComponent implements OnInit {
   
   edit2 = "hidden";
   edit3 = "hidden";
+
+  add1 = "hidden";
+  add2 = "hidden";
   
 
   edit1(){
@@ -26,17 +29,22 @@ export class NotificationComponent implements OnInit {
       console.log('Testing http post request');
     });
     console.log('Deleting Notification, id = ', ID);
-    //window.location.reload();
+    window.location.reload();
   }
 
-  edit(msg1: any,msg2: any){
-    this.http.post(`http://localhost:3012/see-user/editnotification`, {"msg": msg1, "msg2": msg2}).toPromise().then(data =>{
+  edit(ID: any, msg: any){
+    this.http.post(`http://localhost:3012/editNotification`, {"_id": ID, "msg": msg}).toPromise().then(data =>{
       console.log('Testing editing notification');
     });
-    console.log('Testing notifications, msg = ', msg2);
-    //window.location.reload();
+    console.log('Testing notifications, msg = ', msg);
+    window.location.reload();
   }
   
+  add3(){
+    this.add1 = "text";
+    this.add2 = "submit";
+  }
+
   add(msg: any){
 
   }

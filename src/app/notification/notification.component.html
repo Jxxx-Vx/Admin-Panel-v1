@@ -24,17 +24,14 @@
 
 <nz-row [nzGutter]="16">
     <nz-col [nzSpan]="7" class = "wide">
-      
-        
       <ul nz-list [nzDataSource]="notifs"> 
-        <li nz-list-item *ngFor="let item of notifs" nzNoFlex name = "test">
-
+        <li nz-list-item *ngFor="let item of notifs" nzNoFlex name = "test">       
           <nz-card class = "card">
            {{ item.msg }}<br> <br>
 
            <form class = "search">
             <input type={{edit2}} id="msg" name="msg" #msg>
-            <input type={{edit3}} style="border-radius: 15px; outline: 0; padding: 0px 15px; background-color:rgb(161, 233, 113)" (click) = "edit(item._id, msg.value)">
+            <input type={{edit3}} style="border-radius: 15px; outline: 0; padding: 0px 25px; background-color:rgb(161, 233, 113); margin-left:30px;" (click) = "edit(item._id, msg.value)">
           </form>
           <br>
            <button class="edit"  title="Edit Notification" (click) = "edit1()"><i class="fa fa-edit"></i></button>
@@ -43,7 +40,21 @@
           </nz-card>
         </li>
       </ul>
+      <br><br>
+     
+      <button class="icon-btn add-btn" style = "float:right;"(click) = "add3()">
+        <div class="add-icon"></div>
+        <div class="btn-txt">ADD</div>
+      </button>
+      <span style = "font-size:24px; float:right; padding-right:10px;">Add new Notifications</span>
+      <br><br><br><br>
+      <form class = "search" style = "font-size: 24px;">
+        <input type={{add1}} id="add" name="add" #add>
+        <input type={{add2}} style="border-radius: 15px; outline: 0; padding: 0px 25px; background-color:rgb(161, 233, 113); margin-left:30px;">
+      </form>
+
     </nz-col>
+
     <nz-col [nzSpan]="7" class = "wide">
         <nz-card>
             <label nz-checkbox style = "font-size:20px;" >  Everyone</label><br><br>
