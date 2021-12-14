@@ -1,42 +1,91 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'nz-demo-button-danger',
-  template: `<p class = "profile">Profile for  {{userID}}</p>
+  template: `
+ {{edit()}}
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <p class = "profile">Profile for  {{match.name}}</p>
 
-<div class = "center">
+<div class = "container">
+    <div class="card">
+    <form></form>
+        <div class="info"> <span>Edit form</span> <button id="savebutton" (click) = "edit()">edit</button> </div>
+        <div class="forms">
+            <div class="inputs"> <label>Name:</label> <input type="text" style="outline:none;" value="{{match.name}}"></div>
+            <div class="inputs"> <label>Email</label> <input type="text" value="{{match.email}}"> </div>
+            <div class="inputs"> <label>Level</label> <input type="text" value="{{match.level}}"> </div>
+            <div class="inputs"> <label>Password</label> <input type="text" value="{{match.password}}"> </div>
+            <div class="inputs"> <label>Limit User</label> <input type="number" value="{{match.limitClient}}"> </div>
+            <div class = "center">
+              <button class = "edit" >Submit Changes</button>
+              <br>
+              <br>
+            
+              <button class = "archive" (click) = "archive()" >Archive User Account</button>
+              <br>
+              <br>
+              <button class ="delete" title="Delete User" style = "font-size:30px;"(click) = "delete()"><i class="fa fa-trash"></i></button>
+              
+             </div>
+             <br>
+        </div>
+    </div>
+  </div>
  
-  <br>
-  <div class = "fonts">
-  <label>Name:</label><br> <input type="text"  value="{{userID}}"><br>
-  <label>Email</label><br> <input type="text"   value="{{userID}}@gmail.com"><br><br>
-  <label>Password</label><br> <input type="text"   value="{{userID}}"><br><br>
-  <label>Limit User</label><br> <input type="number"   value=""><br><br>
 
-  <button nz-button nzType="primary">Submit Changes</button>
-  <br>
-  <br>
 
-  <button nz-button nzType="primary">Archive User Account</button>
-  <br>
-  <br>
-  <button nz-button nzType="primary" nzDanger>Delete User Account</button>
-  <br>
-  <br>
-  <br>
-  </div>
 
-  </div>
   `,
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  userID: any;
-  constructor(private route: ActivatedRoute) { }// the constructor inializes the activateRoute a module in angular that will allow for user created routes like /contacts/qwer and such
 
-  ngOnInit(): void {
-    this.route.params.subscribe(params=> this.userID = params.userID);//this piece of code takes the input from the url and adds it to the variable userID
+  userID: any;
+  inputs = document.querySelectorAll('input[type="text"]');
+  all: any[] = [];
+
+  match: any;
+
+  
+
+  edit(){
+    for(var i = 0; i < this.all.length; i++){
+      if(this.userID == this.all[i]._id)
+      {
+        this.match = this.all[i]
+      }
+    }
+    console.log(this.match);
   }
 
+  archive(){
+    this.http.post(`http://localhost:3012/see-user/archive`, {"_id": this.match._id}).toPromise().then(data =>{
+      console.log('Archiving user');
+    });
+    console.log('Archiving user, id = ', this.match._id);
+    window.location.reload();
+  }
+
+  delete(){
+    this.http.post(`http://localhost:3012/deleteUser`, {"_id": this.match._id}).toPromise().then(data =>{
+      console.log('Deleting user');
+    });
+    console.log('Deleting user, id = ', this.match._id);
+    window.location.reload();
+  }
+
+  constructor(private route: ActivatedRoute, private http: HttpClient) { 
+  }// the constructor inializes the activateRoute a module in angular that will allow for user created routes like /contacts/qwer and such
+
+  ngOnInit(): void {
+    let url0 = `http://localhost:3012/see-user/all`
+    this.http.get<any[]>(url0).toPromise().then(data => {
+      this.all = data;
+    });
+    this.route.params.subscribe(params=> {this.userID = params.userID;
+    });//this piece of code takes the input from the url and adds it to the variable userID
+  }
 }

@@ -28,7 +28,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
         </ul>
         
         <nz-avatar nzSize="small" nzIcon="user" class = "avatar" type></nz-avatar>
-         {{ item.email }} <span style = "margin-inline-start: 140px; ">{{item.level}}</span>
+         {{ item.email }} <span style = "position: absolute; left:27%;">{{item.level}}</span>
          
       </li>
     </ul>
@@ -41,7 +41,6 @@ export class ArchiveComponent implements OnInit {
   users: any[] = [];
   httpHeaders = new HttpHeaders();
   
-
   unArchive(ID: any){
     
     this.http.post(`http://localhost:3012/unarchive`,{"_id": ID, "archive": "true"}).toPromise().then(data =>{

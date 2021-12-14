@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 .profile{
     text-align: center;
     font-size: 48px;
@@ -9,14 +10,112 @@
 .center{
     text-align: center;
     border-color:blue;
-    border-radius: 100px;
-    border: 5px solid #2d0370;
-    width: 700px;
-    background:rgb(215, 243, 252);
-    margin: auto;
+    border-radius: 1px;
 }
 
 
 .fonts {
     font-size:18px;
 }
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif
+}
+
+.container {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 350px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden
+}
+
+.card .info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e1dede;
+    background-color: #e5e5e5
+}
+
+.card .info button {
+    height: 30px;
+    width: 80px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #000;
+    cursor: pointer;
+    text-transform: uppercase
+}
+
+.card .forms {
+    padding: 15px
+}
+
+.card .inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px
+}
+
+.card .inputs span {
+    font-size: 12px
+}
+
+.card .inputs input {
+    height: 40px;
+    padding: 0px 10px;
+    font-size: 17px;
+    box-shadow: none;
+    outline: none
+}
+
+.card .inputs input[type="text"][readonly] {
+    border: 2px solid rgba(0, 0, 0, 0)
+}
+
+
+.edit{
+    
+    background-color:rgb(72, 255, 0);
+    max-height: 60px;
+    padding: 0px 15px;
+    border-width: 2px;
+    border-radius:30px;
+    font-weight:bold;
+    color:rgb(117, 117, 117);
+}
+
+.archive{
+    background-color:rgb(193, 169, 248);
+    max-height: 60px;
+    padding: 0px 15px;
+    border-width: 2px;
+    border-radius:30px;
+    font-weight:bold;
+    color:rgb(117, 117, 117);
+}
+
+.delete{
+    background-color:rgba(241, 111, 93, 0.979);
+    max-height: 50px;
+    padding: 0px 10px;
+    border-width: 2px;
+    border-radius:100px;
+    font-weight:bold;
+    color:rgb(0, 0, 0);
+    text-shadow: 2px 2px #e1dede;
+    border-width:1px;
+}
+

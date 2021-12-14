@@ -2,18 +2,35 @@ import { Component, OnInit } from '@angular/core';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'nz-demo-list-simple',
   template: ` <h3 [ngStyle]="{ margin: '16px 0' }">Contacts</h3>
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+
+
+
   <nz-tabset class = "scroll">
   <div class = "scroll">
         <nz-tab nzTitle="All">
+        <form class = "search">
+        <datalist id="contacts">
+          <option *ngFor="let item of all" [value]="item.email" >{{item.email}}</option>
+        </datalist>
+        <input type="text" list = "contacts" id = "look" placeholder="Search.." #look>
+        <button type="submit" (click) = "contact(look.value)"><i class="fa fa-search"></i></button>
+        </form>
+        <br>
         <ul nz-list [nzDataSource]="all" nzBordered nzSize="large">
       <li nz-list-item *ngFor="let item of all" nzNoFlex>
         <ul nz-list-item-actions>
         <nz-list-item-action>
-        <a routerLink = "/contact/{{item.name}}">Edit Profile</a>
+        <a routerLink = "/contact/{{item._id}}">Edit Profile</a>
       </nz-list-item-action>
     </ul>
     <nz-avatar nzSize="small" nzIcon="user" class = "avatar" type></nz-avatar>
@@ -28,7 +45,7 @@ import { HttpClient } from '@angular/common/http';
       <li nz-list-item *ngFor="let item of managers" nzNoFlex> 
         <ul nz-list-item-actions ng-init = "itemArg = {item}">
         <nz-list-item-action>
-          <a routerLink = "/contact/{{item.name}}">Edit Profile</a>
+          <a routerLink = "/contact/{{item._id}}">Edit Profile</a>
         </nz-list-item-action>
       </ul>
       <nz-avatar nzSize="small" nzIcon="user" class = "avatar" type></nz-avatar>
@@ -42,7 +59,7 @@ import { HttpClient } from '@angular/common/http';
     <li nz-list-item *ngFor="let item of coaches" nzNoFlex>
       <ul nz-list-item-actions>
       <nz-list-item-action>
-      <a routerLink = "/contact/{{item.name}}">Edit Profile</a>
+      <a routerLink = "/contact/{{item._id}}">Edit Profile</a>
     </nz-list-item-action>
   </ul>
   <nz-avatar nzSize="small" nzIcon="user" class = "avatar" type></nz-avatar>
@@ -55,7 +72,7 @@ import { HttpClient } from '@angular/common/http';
       <li nz-list-item *ngFor="let item of advisors" nzNoFlex>
         <ul nz-list-item-actions>
         <nz-list-item-action>
-        <a routerLink = "/contact/{{item.name}}">Edit Profile</a>
+        <a routerLink = "/contact/{{item._id}}">Edit Profile</a>
       </nz-list-item-action>
     </ul>
     <nz-avatar nzSize="small" nzIcon="user" class = "avatar" type></nz-avatar>
@@ -67,7 +84,7 @@ import { HttpClient } from '@angular/common/http';
     <li nz-list-item *ngFor="let item of specialists" nzNoFlex>
       <ul nz-list-item-actions>
       <nz-list-item-action>
-      <a routerLink = "/contact/{{item.name}}">Edit Profile</a>
+      <a routerLink = "/contact/{{item._id}}">Edit Profile</a>
     </nz-list-item-action>
   </ul>
   <nz-avatar nzSize="small" nzIcon="user" class = "avatar" type></nz-avatar>
@@ -80,7 +97,7 @@ import { HttpClient } from '@angular/common/http';
     <li nz-list-item *ngFor="let item of clients" nzNoFlex>
       <ul nz-list-item-actions>
         <nz-list-item-action>
-          <a routerLink = "/contact/{{item.name}}">Edit Profile</a>
+          <a routerLink = "/contact/{{item._id}}">Edit Profile</a>
         </nz-list-item-action>
       </ul>
       <nz-avatar nzSize="small" nzIcon="user" class = "avatar" type></nz-avatar>
@@ -94,7 +111,7 @@ import { HttpClient } from '@angular/common/http';
     <li nz-list-item *ngFor="let item of admins" nzNoFlex>
       <ul nz-list-item-actions>
       <nz-list-item-action>
-      <a routerLink = "/contact/{{item.name}}">Edit Profile</a>
+      <a routerLink = "/contact/{{item._id}}">Edit Profile</a>
     </nz-list-item-action>
   </ul>
   <nz-avatar nzSize="small" nzIcon="user" class = "avatar" type></nz-avatar>
@@ -103,7 +120,26 @@ import { HttpClient } from '@angular/common/http';
   </ul>
   </nz-tab>
   /** this is the admin tab */
+
+  
     </nz-tabset>
+    <br><br><br>
+    <span style = "font-size:18px; padding-right:10px;">Add new users</span>
+    <button class="icon-btn add-btn" (click) = "add3()">
+    <div class="add-icon"></div>
+    <div class="btn-txt">ADD</div>
+    </button>
+    <br><br><br>
+    
+  
+    <form style = "font-size: 18px;">
+      <input type={{add1}} id="msg"  placeholder = "Name" #name>
+      <input type={{add1}} id="msg"  placeholder = "Email" #email>
+      <input type={{add1}} id="msg"  placeholder = "Password" #password>
+      <input type={{add1}} id="msg"  placeholder = "Level" #level>
+      <input type={{add1}} id="msg"  placeholder = "limitClient" #limitClient>
+      <input type={{add2}} style="border-radius: 15px; outline: 0; padding: 0px 25px; background-color:rgb(161, 233, 113); margin-left:30px;" (click) = "add(name.value, email.value, password.value, level.value, limitClient.value)">
+    </form>
   
   `,
   styleUrls: ['./contact.component.css']
@@ -119,8 +155,42 @@ export class ContactComponent implements OnInit {
   coaches: any[] = [];
   clients: any[] = [];
 
+  match: any;
 
-  constructor(public msg: NzMessageService, private http: HttpClient) { 
+  
+
+  add1 = "hidden";
+  add2 = "hidden";
+
+
+  contact(email: any){
+    for(var i = 0; i < this.all.length; i++){
+      if(email == this.all[i].email)
+      {
+        this.match = this.all[i]
+      }
+    }
+    //console.log("This is the value:", this.match);
+    this.router.navigate(['/contact/',this.match._id]);
+    
+  }
+
+  add3(){
+    this.add1 = "text";
+    this.add2 = "submit";
+  }
+
+  add(name: any, email: any, password: any, level: any, limitClient: any ){
+    this.http.post(`http://localhost:3012/addUser`, {"name": name, "email": email, "password": password, "level": level, "limitClient": limitClient}).toPromise().then(data =>{
+      console.log('Adding user');
+    });
+    console.log('Adding user: ',name, email, password, level, limitClient);
+    window.location.reload();
+  }
+
+
+
+  constructor(public msg: NzMessageService, private http: HttpClient, private router: Router) { 
     let url0 = `http://localhost:3012/see-user/all`
     this.http.get<any[]>(url0).toPromise().then(data => {
       this.all = data;
