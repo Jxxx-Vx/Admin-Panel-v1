@@ -23,10 +23,10 @@
 <br><br>
 
 <nz-row [nzGutter]="16">
-    <nz-col [nzSpan]="7" class = "wide">
+    <nz-col [nzSpan]="7" class = "wide" style = "overflow:scroll; max-height:800px;">
       <ul nz-list [nzDataSource]="notifs"> 
         <li nz-list-item *ngFor="let item of notifs" nzNoFlex name = "test">       
-          <nz-card class = "card">
+          <nz-card class = "card" style = "font-size:22px;">
            {{ item.msg }}<br> <br>
 
            <form class = "search">
@@ -34,9 +34,10 @@
             <input type={{edit3}} style="border-radius: 15px; outline: 0; padding: 0px 25px; background-color:rgb(161, 233, 113); margin-left:30px;" (click) = "edit(item._id, msg.value)">
           </form>
           <br>
+          
            <button class="edit"  title="Edit Notification" (click) = "edit1()"><i class="fa fa-edit"></i></button>
            <button class="delete"  title="Delete Notification" (click) = "delete(item._id)"><i class="fa fa-trash"></i></button>
-           <button nz button class = "select">Select</button>
+           <button nz button class = "select" (click) = "selectamsg(item.msg)">Select</button>
           </nz-card>
         </li>
       </ul>
@@ -48,15 +49,19 @@
       </button>
       <span style = "font-size:24px; float:right; padding-right:10px;">Add new Notifications</span>
       <br><br><br><br>
-      <form class = "search" style = "font-size: 24px;">
-        <input type={{add1}} id="add" name="add" #add>
-        <input type={{add2}} style="border-radius: 15px; outline: 0; padding: 0px 25px; background-color:rgb(161, 233, 113); margin-left:30px;">
+    
+      <form style = "font-size: 24px; float: right;">
+        <input type={{add1}} id="msg" name="msg" #msg>
+        <input type={{add2}} style="border-radius: 15px; outline: 0; padding: 0px 25px; background-color:rgb(161, 233, 113); margin-left:30px;" (click) = "add(msg.value)">
       </form>
+      <br><br><br>
+   
 
     </nz-col>
 
     <nz-col [nzSpan]="7" class = "wide">
         <nz-card>
+          <form class = "search"></form>
             <label nz-checkbox style = "font-size:20px;" >  Everyone</label><br><br>
             <label nz-checkbox style = "font-size:20px;">  All the managers</label><br><br>
             <label nz-checkbox style = "font-size:20px;">  All the coaches</label><br><br>

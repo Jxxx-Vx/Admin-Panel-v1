@@ -1,18 +1,19 @@
 
 <body>
     <br><br><br><br><br><br><br><br><br><br>
-    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
-
+    
+      <div class="login-box">
         <img
         nz-image
         width="300px"
         height="135px"
         nzSrc="/assets/images/fynanclogo.png"
         alt="Fynanc"
+        float = "right"
         />
-        <br>
-        <br>
-        <nz-form-item>
+  <h2>Login</h2>
+  <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+    <nz-form-item>
         <nz-form-control nzErrorTip="Please input your username!">
             <nz-input-group nzPrefixIcon="user">
             <input type="text" nz-input formControlName="userName" placeholder="Username" />
@@ -32,10 +33,22 @@
                     <span style = "color:white">Remember me</span>
                 </label>
             </div>
-            <div nz-col [nzSpan]="12">
-                <a class="login-form-forgot">Forgot password</a>
-            </div>
         </div>
-        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'"(click)="createBasicMessage()">Log in</button>
-    </form>
+        <div>
+        <a href="" style = "margin-left:30%;">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button nz-button class="login-form-button login-form-margin" style = "background-color:transparent;" [nzType]="'primary'"(click)="createBasicMessage()">Log in</button>
+          </a>    
+        </div>
+    
+  </form>
+</div>
 </body>
+
+
+
+
+

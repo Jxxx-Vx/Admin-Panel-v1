@@ -1,8 +1,4 @@
-import { Component, Input } from '@angular/core';
-
-
-
-
+import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,7 +9,8 @@ import { Component, Input } from '@angular/core';
 })
 
 
-export class AppComponent {
-  isCollapsed = false;
- 
+export class AppComponent{
+  isCollapsed = false;  
+  hide = "hidden";
+  
 }

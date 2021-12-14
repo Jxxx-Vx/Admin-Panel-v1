@@ -10,12 +10,27 @@ import { HttpClient } from '@angular/common/http';
 export class NotificationComponent implements OnInit {
   notifs: any[] = [];
   
+  selectmsg = "";
+
+
   edit2 = "hidden";
   edit3 = "hidden";
 
   add1 = "hidden";
   add2 = "hidden";
   
+  selectamsg(msg: any){
+    this.selectmsg = msg;
+    console.log("The notification to be sent is: ", this.selectmsg)
+  }
+
+  add(msg: any){
+    this.http.post(`http://localhost:3012/addNotification`, {"msg": msg}).toPromise().then(data =>{
+      console.log('Testing adding notification');
+    });
+    console.log('Adding notifications, msg = ', msg);
+    window.location.reload();
+  }
 
   edit1(){
     this.edit2 = "text";
@@ -43,10 +58,6 @@ export class NotificationComponent implements OnInit {
   add3(){
     this.add1 = "text";
     this.add2 = "submit";
-  }
-
-  add(msg: any){
-
   }
 
   constructor(public msg: NzMessageService, private http: HttpClient) { 
