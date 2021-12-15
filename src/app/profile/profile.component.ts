@@ -17,7 +17,7 @@ import { HttpClient } from '@angular/common/http';
             <div class="inputs"> <label>Name:</label> <input type="text" value="{{match.name}}" name = "name" #name></div>
             <div class="inputs"> <label>Email</label> <input type="text" value="{{match.email}}" name = "email" #email> </div>
             <div class="inputs"> <label>Level</label> <input type="text" value="{{match.level}}" name = "level" #level> </div>
-            <div class="inputs"> <label>Password</label> <input type="text" value="{{match.password}}" name = "password" #password> </div>
+            <div class="inputs"> <label>Password</label> <input type="password" value="{{match.password}}" name = "password" #password> </div>
             <div class="inputs"> <label>Limit User</label> <input type="number" value="{{match.limitClient}}" name = "limit" #limit> </div>
             <div class = "center">
               <button class = "edit"(click) = "edit1(name.value, email.value, level.value, password.value, limit.value)" >Submit Changes</button>

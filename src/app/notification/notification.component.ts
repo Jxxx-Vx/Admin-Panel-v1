@@ -21,8 +21,18 @@ export class NotificationComponent implements OnInit {
   
   selectamsg(msg: any){
     this.selectmsg = msg;
+    alert('Notification Selected');
     console.log("The notification to be sent is: ", this.selectmsg)
   }
+
+  add4(msg: any){
+    this.http.post(`http://localhost:3012/addNotification`, {"msg": msg}).toPromise().then(data =>{
+      console.log('Testing adding notification');
+    });
+    console.log('Adding notifications, msg = ', msg);
+    window.location.reload();
+  }
+
 
   add(msg: any){
     let checkboxes = document.getElementsByClassName('ant-checkbox-wrapper-checked');
@@ -30,7 +40,7 @@ export class NotificationComponent implements OnInit {
     for(let i = 0;i<checkboxes.length; i++){
       levels.push(checkboxes[i].id);
     }
-    this.http.post(`http://localhost:3012/addNotification`, {"levels": levels, "msg": msg}).toPromise().then(data =>{
+    this.http.post(`http://localhost:3012/addNotification1`, {"levels": levels, "msg": msg}).toPromise().then(data =>{
       console.log('Testing adding notification');
     });
     console.log('Adding notifications, msg = ', msg);

@@ -240,7 +240,7 @@ export class ContactComponent implements OnInit {
     this.http.post(`http://localhost:3012/addUser`, {"name": name, "email": email, "password": password, "level": level, "limitClient": limitClient}).toPromise().then(data =>{
       console.log('Adding user');
     });
-    console.log('Adding user: ',name, email, password, level, limitClient);
+    console.log('Adding user: ', name, email, password, level, limitClient);
     window.location.reload();
   }
 
