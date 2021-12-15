@@ -21,7 +21,7 @@ export class NotificationComponent implements OnInit {
   
   selectamsg(msg: any){
     this.selectmsg = msg;
-    alert('Notification Selected');
+    alert('Notification Selected');//will print on the screen notification selected
     console.log("The notification to be sent is: ", this.selectmsg)
   }
 
@@ -82,9 +82,9 @@ export class NotificationComponent implements OnInit {
   }
 
   constructor(public msg: NzMessageService, private http: HttpClient) { 
-    let url = `http://localhost:3012/see-user/notification`;
+    let url = `http://localhost:3012/see-user/notification`;//basically gets the data from the database 
     this.http.get<any[]>(url).toPromise().then(data => {
-      this.notifs = data;
+      this.notifs = data;//sets the data from the database and puts it into this.notifs variable
     });
   }
 
