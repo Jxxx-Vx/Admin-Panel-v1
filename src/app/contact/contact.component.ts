@@ -18,7 +18,7 @@ import {Router} from '@angular/router';
   <nz-tabset class = "scroll">
   <div class = "scroll">
         <nz-tab nzTitle="All">
-        <form class = "search">
+        <form class = "search" autocomplete = "off">
         <datalist id="contacts">
           <option *ngFor="let item of all" [value]="item.email" >{{item.email}}</option>
         </datalist>
@@ -41,7 +41,16 @@ import {Router} from '@angular/router';
   </div>
   /** comments for code block  8 - 20. The code is for the all tab for the contacts page. line 11 creates a loop that will render all the data from the data array*/
   /** comments for code block  8 - 20. line 17 will render the elements in item in a ul or unordered list */
-      <nz-tab nzTitle="Manager"><ul nz-list [nzDataSource]="managers" nzBordered nzSize="large">
+      <nz-tab nzTitle="Manager">
+      <form class = "search" autocomplete = "off">
+      <datalist id="contacts">
+        <option *ngFor="let item of managers" [value]="item.email" >{{item.email}}</option>
+      </datalist>
+      <input type="text" list = "contacts" id = "look" placeholder="Search.." #look>
+      <button type="submit" (click) = "contact(look.value)"><i class="fa fa-search"></i></button>
+      </form>
+      <br>
+      <ul nz-list [nzDataSource]="managers" nzBordered nzSize="large">
       <li nz-list-item *ngFor="let item of managers" nzNoFlex> 
         <ul nz-list-item-actions ng-init = "itemArg = {item}">
         <nz-list-item-action>
@@ -55,7 +64,16 @@ import {Router} from '@angular/router';
     /** comments for code block  24 - 33. The code is for the managers tab for the contacts page. line 31 creates a loop that will render all the data from the data array*/
   /** comments for code block  24 - 33. for examples on the ng zorro component that was used, check out their page  */
    /** https://ng.ant.design/components/tabs/en */
-      <nz-tab nzTitle="Coaches"><ul nz-list [nzDataSource]="coaches" nzBordered nzSize="large">
+      <nz-tab nzTitle="Coaches">
+      <form class = "search" autocomplete = "off">
+      <datalist id="contacts">
+        <option *ngFor="let item of coaches" [value]="item.email" >{{item.email}}</option>
+      </datalist>
+      <input type="text" list = "contacts" id = "look" placeholder="Search.." #look>
+      <button type="submit" (click) = "contact(look.value)"><i class="fa fa-search"></i></button>
+      </form>
+      <br>
+    <ul nz-list [nzDataSource]="coaches" nzBordered nzSize="large">
     <li nz-list-item *ngFor="let item of coaches" nzNoFlex>
       <ul nz-list-item-actions>
       <nz-list-item-action>
@@ -68,7 +86,17 @@ import {Router} from '@angular/router';
   </ul></nz-tab>
   /** this is the coaches tab. The anchor tag is necessary for routing to the profiles page*/
   /** when you click on it, it will send you to the */
-      <nz-tab nzTitle="Advisors"><ul nz-list [nzDataSource]="advisors" nzBordered nzSize="large">
+      <nz-tab nzTitle="Advisors">
+      <form class = "search" autocomplete = "off">
+      <datalist id="contacts">
+        <option *ngFor="let item of advisors" [value]="item.email" >{{item.email}}</option>
+      </datalist>
+      <input type="text" list = "contacts" id = "look" placeholder="Search.." #look>
+      <button type="submit" (click) = "contact(look.value)"><i class="fa fa-search"></i></button>
+      </form>
+      <br>
+      
+      <ul nz-list [nzDataSource]="advisors" nzBordered nzSize="large">
       <li nz-list-item *ngFor="let item of advisors" nzNoFlex>
         <ul nz-list-item-actions>
         <nz-list-item-action>
@@ -80,7 +108,18 @@ import {Router} from '@angular/router';
       </li>
     </ul></nz-tab>
     /** this is the advisors tab */
-      <nz-tab nzTitle="Specialist"><ul nz-list [nzDataSource]="specialists" nzBordered nzSize="large">
+      <nz-tab nzTitle="Specialist">
+      <form class = "search" autocomplete = "off">
+      <datalist id="contacts">
+        <option *ngFor="let item of specialists" [value]="item.email" >{{item.email}}</option>
+      </datalist>
+      <input type="text" list = "contacts" id = "look" placeholder="Search.." #look>
+      <button type="submit" (click) = "contact(look.value)"><i class="fa fa-search"></i></button>
+      </form>
+      <br>
+      
+    <ul nz-list [nzDataSource]="specialists" nzBordered nzSize="large">
+      
     <li nz-list-item *ngFor="let item of specialists" nzNoFlex>
       <ul nz-list-item-actions>
       <nz-list-item-action>
@@ -93,6 +132,14 @@ import {Router} from '@angular/router';
   </ul></nz-tab>
   /** this is the specialist tab */
       <nz-tab nzTitle="User">
+      <form class = "search" autocomplete = "off">
+      <datalist id="contacts">
+        <option *ngFor="let item of clients" [value]="item.email" >{{item.email}}</option>
+      </datalist>
+      <input type="text" list = "contacts" id = "look" placeholder="Search.." #look>
+      <button type="submit" (click) = "contact(look.value)"><i class="fa fa-search"></i></button>
+      </form>
+      <br>
       <ul nz-list [nzDataSource]="clients" nzBordered nzSize="large">
     <li nz-list-item *ngFor="let item of clients" nzNoFlex>
       <ul nz-list-item-actions>
@@ -106,7 +153,16 @@ import {Router} from '@angular/router';
   </ul>
   </nz-tab>
   /** this is the User tab */
+ 
   <nz-tab nzTitle="Admin">
+  <form class = "search" autocomplete = "off">
+  <datalist id="contacts">
+    <option *ngFor="let item of admins" [value]="item.email" >{{item.email}}</option>
+  </datalist>
+  <input type="text" list = "contacts" id = "look" placeholder="Search.." #look>
+  <button type="submit" (click) = "contact(look.value)"><i class="fa fa-search"></i></button>
+  </form>
+  <br>
       <ul nz-list [nzDataSource]="admins" nzBordered nzSize="large">
     <li nz-list-item *ngFor="let item of admins" nzNoFlex>
       <ul nz-list-item-actions>

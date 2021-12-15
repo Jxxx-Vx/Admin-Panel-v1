@@ -14,13 +14,13 @@ import { HttpClient } from '@angular/common/http';
     <form></form>
         <div class="info"> <span>Edit form</span> <button id="savebutton" (click) = "edit()">edit</button> </div>
         <div class="forms">
-            <div class="inputs"> <label>Name:</label> <input type="text" style="outline:none;" value="{{match.name}}"></div>
-            <div class="inputs"> <label>Email</label> <input type="text" value="{{match.email}}"> </div>
-            <div class="inputs"> <label>Level</label> <input type="text" value="{{match.level}}"> </div>
-            <div class="inputs"> <label>Password</label> <input type="text" value="{{match.password}}"> </div>
-            <div class="inputs"> <label>Limit User</label> <input type="number" value="{{match.limitClient}}"> </div>
+            <div class="inputs"> <label>Name:</label> <input type="text" value="{{match.name}}" name = "name" #name></div>
+            <div class="inputs"> <label>Email</label> <input type="text" value="{{match.email}}" name = "email" #email> </div>
+            <div class="inputs"> <label>Level</label> <input type="text" value="{{match.level}}" name = "level" #level> </div>
+            <div class="inputs"> <label>Password</label> <input type="text" value="{{match.password}}" name = "password" #password> </div>
+            <div class="inputs"> <label>Limit User</label> <input type="number" value="{{match.limitClient}}" name = "limit" #limit> </div>
             <div class = "center">
-              <button class = "edit" >Submit Changes</button>
+              <button class = "edit"(click) = "edit1(name.value, email.value, level.value, password.value, limit.value)" >Submit Changes</button>
               <br>
               <br>
             
@@ -34,10 +34,6 @@ import { HttpClient } from '@angular/common/http';
         </div>
     </div>
   </div>
- 
-
-
-
   `,
   styleUrls: ['./profile.component.css']
 })
@@ -58,7 +54,13 @@ export class ProfileComponent implements OnInit {
         this.match = this.all[i]
       }
     }
+  }
+  edit1(name: any, email: any, level: any, password: any, limit: any){
+    this.http.post(`http://localhost:3012/editUser`, {"_id": this.match._id, "name": name, "email": email, "password": password, "level": level, "limitClient": limit}).toPromise().then(data =>{
+      console.log('Edit user');
+    });
     console.log(this.match);
+    window.location.reload();
   }
 
   archive(){
