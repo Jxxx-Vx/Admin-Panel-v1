@@ -30,3 +30,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Additional instructions can be found here: https://docs.google.com/document/d/1iv6ZyTFO0nY_u7b_3KhJw-1kgCvyVJj2Ae_0a3zsseg/edit?usp=sharing
