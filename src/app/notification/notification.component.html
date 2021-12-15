@@ -61,14 +61,14 @@
 
     <nz-col [nzSpan]="7" class = "wide">
         <nz-card>
-          <form class = "search"></form>
-            <label nz-checkbox style = "font-size:20px;" >  Everyone</label><br><br>
-            <label nz-checkbox style = "font-size:20px;">  All the managers</label><br><br>
-            <label nz-checkbox style = "font-size:20px;">  All the coaches</label><br><br>
-            <label nz-checkbox style = "font-size:20px;">  All the advisors</label><br><br>
-            <label nz-checkbox style = "font-size:20px;">  All the specialists</label><br><br>
-            <label nz-checkbox style = "font-size:20px;">  All the clients</label><br><br>
-            <label nz-checkbox style = "font-size:20px;">  By names</label><br><br>
+          <form id='checkBoxSelector' class = "search"></form>
+            
+            <label id= 'Manager' nz-checkbox style = "font-size:20px;">  All the managers</label><br><br>
+            <label id= 'Coach' nz-checkbox style = "font-size:20px;">  All the coaches</label><br><br>
+            <label id= 'Advisor' nz-checkbox style = "font-size:20px;">  All the advisors</label><br><br>
+            <label id= 'Specialist' nz-checkbox style = "font-size:20px;">  All the specialists</label><br><br>
+            <label id= 'Client' nz-checkbox style = "font-size:20px;">  All the clients</label><br><br>
+            
             
             <form class = "search">
               <input type="text" placeholder="Search for names.." name="search">
@@ -82,7 +82,7 @@
           <div class = "confirm">
             Confirm to send the selected <br>notification to the chosen people.
             <br><br
-            ><button type="submit">Send</button>
+            ><button type="submit" (click) ="addMsg()">Send</button>
           </div>
             <br><br><br><br><br>
           
