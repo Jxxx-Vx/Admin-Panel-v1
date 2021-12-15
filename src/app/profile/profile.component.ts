@@ -37,14 +37,14 @@ import { HttpClient } from '@angular/common/http';
   `,
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit {//this component is when you click on edit profile in the contacts component
 
   userID: any;
   inputs = document.querySelectorAll('input[type="text"]');
   all: any[] = [];
 
   match: any;
-
+  
   
 
   edit(){
@@ -55,15 +55,15 @@ export class ProfileComponent implements OnInit {
       }
     }
   }
-  edit1(name: any, email: any, level: any, password: any, limit: any){
+  edit1(name: any, email: any, level: any, password: any, limit: any){//this is what will happen when you click on the edit button
     this.http.post(`http://localhost:3012/editUser`, {"_id": this.match._id, "name": name, "email": email, "password": password, "level": level, "limitClient": limit}).toPromise().then(data =>{
       console.log('Edit user');
     });
     console.log(this.match);
-    window.location.reload();
+    window.location.reload();//refreshes the page 
   }
 
-  archive(){
+  archive(){//this function will run when you click on the archive button
     this.http.post(`http://localhost:3012/see-user/archive`, {"_id": this.match._id}).toPromise().then(data =>{
       console.log('Archiving user');
     });
@@ -71,7 +71,7 @@ export class ProfileComponent implements OnInit {
     window.location.reload();
   }
 
-  delete(){
+  delete(){//this is the code that will run when you click on the trash can or delete function
     this.http.post(`http://localhost:3012/deleteUser`, {"_id": this.match._id}).toPromise().then(data =>{
       console.log('Deleting user');
     });
@@ -79,11 +79,11 @@ export class ProfileComponent implements OnInit {
     window.location.reload();
   }
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { 
+  constructor(private route: ActivatedRoute, private http: HttpClient) { //needs to include the http client to connect front end and back end
   }// the constructor inializes the activateRoute a module in angular that will allow for user created routes like /contacts/qwer and such
 
-  ngOnInit(): void {
-    let url0 = `http://localhost:3012/see-user/all`
+  ngOnInit(): void {//this is the function that will run when the page starts 
+    let url0 = `http://localhost:3012/see-user/all`//goes to this route then gets all the data 
     this.http.get<any[]>(url0).toPromise().then(data => {
       this.all = data;
     });
