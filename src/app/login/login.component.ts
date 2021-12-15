@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
       if(password == '12345' ){
         this.message.info('Login successful!');
        
-        this.router.navigate(['/welcome']);
+        this.router.navigate(['/welcome']);//after the password is successful submit the form 
       }
       else{this.message.info('Login unsuccessful!');}
     } else {
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.validateForm = this.fb.group({
+    this.validateForm = this.fb.group({//want to make it a pair because there could be duplicate passwords in the database
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]],
       remember: [true]
