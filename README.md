@@ -1,4 +1,4 @@
-# Fyanc Admin Panel
+# Fynanc Admin Panel
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
 The project will implement the NG-Zorro UI library to create a basic administration panel.
